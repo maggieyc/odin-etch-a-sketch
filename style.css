@@ -1,0 +1,21 @@
+.container{
+  border: solid black 2px;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 960px;
+  height: 960px;
+}
+
+.row{
+  border: solid blue 2px;
+  background-color: lightblue;
+  display: flex;
+  justify-content: space-evenly;
+  height:100%;
+}
+
+.box{
+  border: dotted white 1px;
+}
