@@ -8,14 +8,18 @@
   height: 960px;
 }
 
-.row{
-  border: solid blue 2px;
-  background-color: lightblue;
+.row{;
   display: flex;
   justify-content: space-evenly;
   height:100%;
 }
 
 .box{
-  border: dotted white 1px;
+  border: dotted black 1px;
+  background-color: white;
+  width:100%;
+}
+
+.clicked{
+  background-color: purple;
 }
