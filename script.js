@@ -89,6 +89,8 @@ gridButton.addEventListener('click', changeGrid);
 let clearButton = document.querySelector('.clear-grid');
 
 function clearGrid(){
+  x = boxes.length/2;
+  y = boxes.length/2;
   for (let y = 0; y < boxes.length; y++){
     for (let x = 0; x < boxes.length; x++){
       if (boxes[y][x].classList.contains('clicked')){
