@@ -1,11 +1,12 @@
 .container{
-  border: solid black 2px;
+  border: solid black 3px;
   background-color: red;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   width: 960px;
   height: 960px;
+  padding: 100px;
 }
 
 .row{
@@ -15,11 +16,30 @@
 }
 
 .box{
-  border: dotted black 1px;
+  border: dotted black 0.5px;
   background-color: white;
   width:100%;
 }
 
 .clicked{
-  background-color: purple;
+  background-color: black;
+}
+
+h2{
+  font-size: 30px;
+}
+
+.menu{
+  display: flex;
+  justify-content: space-between;
+  width: 960px;
+}
+
+
+button {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  background-color: white;
+  font-size: 20px;
 }
