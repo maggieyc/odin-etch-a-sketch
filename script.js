@@ -2,7 +2,6 @@ let container = document.querySelector('.container');
 let boxes;
 let x,y;
 
-
 // TRACK ARROW KEYS
 
 document.addEventListener('keydown', keydown_ivent);
@@ -27,7 +26,7 @@ function keydown_ivent(e) {
       }
 			break;
 		case 'ArrowRight':
-			if ( x !== boxes.length -1){
+			if ( x !== boxes[0].length -1){
         x = x+1;
       }
 			break;
@@ -45,11 +44,13 @@ function keyup_ivent(e) {
 }
 
 function createGrid(width){
+
+  container.innerHTML = '';
   boxes = [];
   x = width/2;
   y = width/2;
 
-  for (let i = 0; i < width; i++){
+  for (let i = 0; i < width * 2/3; i++){
     let row = document.createElement('div');
     row.classList.add('row');
     container.appendChild(row);
@@ -63,25 +64,22 @@ function createGrid(width){
     }
   }
 
-  console.log(boxes);
-
 }
 
-// create grid (16x16 by default)
-createGrid(16);
+// create grid
+createGrid(20);
 
 // allow user to change the size of the grid
-let gridButton = document.querySelector('.change-size');
+let smallButton = document.querySelector('.small-grid');
+let mediumButton = document.querySelector('.medium-grid');
+let largeButton = document.querySelector('.large-grid');
 
-function changeGrid(){
-  let width = prompt('Input a width for the grid:', '16');
-  if (!isNaN(Number(width))){
-    container.innerHTML = '';
-    createGrid(Number(width));
-  }
-}
+//let gridSizes = document.querySelector('.grid-sizes');
+//gridSizes.onchange = (e) => createGrid(e.value);
 
-gridButton.addEventListener('click', changeGrid);
+smallButton.addEventListener('click', () => createGrid(15));
+mediumButton.addEventListener('click', () => createGrid(30));
+largeButton.addEventListener('click', () => createGrid(90));
 
 
 
@@ -92,7 +90,7 @@ function clearGrid(){
   x = boxes.length/2;
   y = boxes.length/2;
   for (let y = 0; y < boxes.length; y++){
-    for (let x = 0; x < boxes.length; x++){
+    for (let x = 0; x < boxes[y].length; x++){
       if (boxes[y][x].classList.contains('clicked')){
         boxes[y][x].classList.remove('clicked');
       }
